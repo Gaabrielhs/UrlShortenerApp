@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">UrlShortenerApp</string>
+    <string name="input_placeholder">Input your URL here...</string>
+    <string name="send_icon_content_description">Send Url to be shortened</string>
+    <string name="full_url_label">Full URL</string>
+    <string name="shortened_url_label">Shortened URL</string>
+</resources>
