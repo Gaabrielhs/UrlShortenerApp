@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -12,6 +11,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.urlshortenerapp.ui.LinksListScreen
 import com.example.urlshortenerapp.ui.MainViewModel
 import com.example.urlshortenerapp.ui.theme.UrlShortenerAppTheme
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : ComponentActivity() {
 
@@ -20,7 +20,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             UrlShortenerAppTheme {
-                val viewModel by viewModels<MainViewModel>()
+                val viewModel by viewModel<MainViewModel>()
                 val linkListState by viewModel.linkListState.collectAsStateWithLifecycle()
                 LinksListScreen(
                     modifier = Modifier.fillMaxSize(),

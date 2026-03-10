@@ -1,6 +1,5 @@
 package com.example.urlshortenerapp.data.service
 
-import com.example.urlshortenerapp.core.HttpClientFactory
 import com.example.urlshortenerapp.data.models.PostLinkRequest
 import com.example.urlshortenerapp.data.models.PostLinkResponse
 import io.ktor.client.HttpClient
@@ -10,7 +9,7 @@ import io.ktor.client.request.setBody
 import io.ktor.http.ContentType
 import io.ktor.http.contentType
 
-class UrlShortenerServiceImpl(private val httpClient: HttpClient = HttpClientFactory().create()) :
+class UrlShortenerServiceImpl(private val httpClient: HttpClient) :
     UrlShortenerService {
     companion object {
         const val BASE_URL = "https://url-shortener-server.onrender.com/api/alias"

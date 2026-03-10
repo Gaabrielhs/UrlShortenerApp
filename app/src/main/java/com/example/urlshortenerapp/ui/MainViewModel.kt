@@ -3,7 +3,6 @@ package com.example.urlshortenerapp.ui
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.urlshortenerapp.data.repository.UrlShortenerRepository
-import com.example.urlshortenerapp.data.repository.UrlShortenerRepositoryImpl
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.combine
@@ -13,7 +12,7 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
 class MainViewModel(
-    private val repository: UrlShortenerRepository = UrlShortenerRepositoryImpl(),
+    private val repository: UrlShortenerRepository,
     sharingStarted: SharingStarted = SharingStarted.WhileSubscribed(5_000)
 ) : ViewModel(),
     LinksListActions {

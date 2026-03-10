@@ -2,13 +2,11 @@ package com.example.urlshortenerapp.data.repository
 
 import com.example.urlshortenerapp.data.models.PostLinkResponse
 import com.example.urlshortenerapp.data.service.UrlShortenerService
-import com.example.urlshortenerapp.data.service.UrlShortenerServiceImpl
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 
-class UrlShortenerRepositoryImpl(private val service: UrlShortenerService = UrlShortenerServiceImpl()) :
-    UrlShortenerRepository {
+class UrlShortenerRepositoryImpl(private val service: UrlShortenerService) : UrlShortenerRepository {
     // Saved in memory for now, but can be easily migrated to Room database or Datastore
     private val history: MutableStateFlow<List<PostLinkResponse>> = MutableStateFlow(emptyList())
 
